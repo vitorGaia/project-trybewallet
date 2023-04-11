@@ -14,7 +14,7 @@ const requestStarted = () => ({
 
 const requestSuccessful = (currencies) => ({
   type: REQUEST_SUCCESSFUL,
-  data: currencies,
+  data: [currencies],
 });
 
 const requestFailed = (error) => ({
@@ -26,8 +26,8 @@ export const fetchCurrencies = () => async (dispatch) => {
   try {
     dispatch(requestStarted());
     const data = await (await fetch('https://economia.awesomeapi.com.br/json/all')).json();
-    console.log(data);
-    dispatch(requestSuccessful(data.currencies));
+    delete data.USDT;
+    dispatch(requestSuccessful(data));
   } catch (error) {
     dispatch(requestFailed(error));
   }

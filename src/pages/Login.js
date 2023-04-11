@@ -30,8 +30,8 @@ class Login extends React.Component {
   handleClick = () => {
     const { history, dispatch } = this.props;
     const { email } = this.state;
-    dispatch(userLogin(email));
     history.push('/carteira');
+    dispatch(userLogin(email));
   };
 
   render() {
@@ -61,7 +61,7 @@ class Login extends React.Component {
           <button
             disabled={ disableBtn }
             onClick={ this.handleClick }
-            type="submit"
+            type="button"
           >
             Entrar
           </button>
