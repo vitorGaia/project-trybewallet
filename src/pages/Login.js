@@ -15,9 +15,15 @@ class Login extends React.Component {
 
   handleVerifies = () => {
     const { email, password } = this.state;
-    const minLength = 5;
-    if (email.includes('@') && password.length > minLength) {
+    const minLength = 6;
+    const regexEmail = /\S+@\S+\.\S+/;
+
+    if (regexEmail.test(email)
+    && password.length >= minLength
+    && email !== '') {
       this.setState({ disableBtn: false });
+    } else {
+      this.setState({ disableBtn: true });
     }
   };
 
