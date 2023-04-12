@@ -1,4 +1,5 @@
 import {
+  DELETE_EXPENSE,
   REQUEST_FAILED,
   REQUEST_STARTED,
   REQUEST_SUCCESSFUL,
@@ -51,6 +52,14 @@ const wallet = (state = INITIAL_STATE, action) => {
           ...data[0],
           exchangeRates: data[1],
         },
+      ],
+    };
+
+  case DELETE_EXPENSE:
+    return {
+      ...state,
+      expenses: [
+        ...state.expenses.filter((expense) => expense.id !== data),
       ],
     };
 

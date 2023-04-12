@@ -9,8 +9,8 @@ class Header extends Component {
     const totalValue = expenses.reduce((acc, expense) => {
       const { value, currency, exchangeRates } = expense;
 
-      const exchangeRate = Object
-        .entries(exchangeRates).filter((rate) => rate[0] === currency)[0][1].ask;
+      const exchangeRate = exchangeRates !== undefined ? Object.entries(exchangeRates)
+        .filter((rate) => rate[0] === currency)[0][1].ask : 0;
 
       const convert = (+value * +exchangeRate);
 

@@ -3,6 +3,7 @@ export const REQUEST_STARTED = 'REQUEST_STARTED';
 export const REQUEST_SUCCESSFUL = 'REQUEST_SUCCESSFUL';
 export const REQUEST_FAILED = 'REQUEST_FAILED';
 export const SAVE_EXPENSES = 'SAVE_EXPENSES';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 export const userLogin = (email) => ({
   type: USER_LOGIN,
@@ -48,3 +49,8 @@ export const fetchCotations = (expense) => async (dispatch) => {
     dispatch(requestFailed(error));
   }
 };
+
+export const deleteExpense = (id) => ({
+  type: DELETE_EXPENSE,
+  data: id,
+});
