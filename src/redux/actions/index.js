@@ -14,7 +14,7 @@ const requestStarted = () => ({
 
 const requestSuccessful = (currencies) => ({
   type: REQUEST_SUCCESSFUL,
-  data: [currencies],
+  data: Object.keys(currencies),
 });
 
 const requestFailed = (error) => ({

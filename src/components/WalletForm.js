@@ -10,8 +10,21 @@ class WalletForm extends Component {
   }
 
   render() {
-    /* const { currencies } = this.props;
-    console.log(currencies.map((currencie) => console.log(currencie))); */
+    const { currencies } = this.props;
+
+    const mapCurrencies = currencies.map((currencie, index) => (
+      <option key={ index + 1 }>{currencie}</option>
+    ));
+
+    const methodOptions = ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'];
+    const mapMethods = methodOptions.map((method, index) => (
+      <option key={ index + 1 }>{method}</option>
+    ));
+
+    const categorieOptions = ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde'];
+    const mapCategories = categorieOptions.map((cagorie, index) => (
+      <option key={ index + 1 }>{cagorie}</option>
+    ));
 
     return (
       <form>
@@ -32,6 +45,27 @@ class WalletForm extends Component {
           />
         </label>
 
+        <label>
+          Moeda
+          <select data-testid="currency-input">
+            {mapCurrencies}
+          </select>
+        </label>
+
+        <label>
+          Métodos de pagamento
+          <select data-testid="method-input">
+            {mapMethods}
+          </select>
+        </label>
+
+        <label>
+          Categoria
+          <select data-testid="tag-input">
+            {mapCategories}
+          </select>
+        </label>
+
       </form>
     );
   }
@@ -44,6 +78,9 @@ const mapStateToProps = (state) => ({
 
 WalletForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  currencies: PropTypes.arrayOf(
+    PropTypes.string.isRequired,
+  ).isRequired,
 };
 
 export default connect(mapStateToProps)(WalletForm);
