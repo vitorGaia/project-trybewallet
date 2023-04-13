@@ -4,6 +4,8 @@ export const REQUEST_SUCCESSFUL = 'REQUEST_SUCCESSFUL';
 export const REQUEST_FAILED = 'REQUEST_FAILED';
 export const SAVE_EXPENSES = 'SAVE_EXPENSES';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+export const ACTIVATE_EDIT_MODE = 'ACTIVATE_EDIT_MODE';
+export const SAVE_EDIT = 'SAVE_EDIT';
 
 export const userLogin = (email) => ({
   type: USER_LOGIN,
@@ -53,4 +55,14 @@ export const fetchCotations = (expense) => async (dispatch) => {
 export const deleteExpense = (id) => ({
   type: DELETE_EXPENSE,
   data: id,
+});
+
+export const activateEditMode = (idToEdit) => ({
+  type: ACTIVATE_EDIT_MODE,
+  data: idToEdit,
+});
+
+export const saveEdit = (editor) => ({
+  type: SAVE_EDIT,
+  data: editor,
 });
