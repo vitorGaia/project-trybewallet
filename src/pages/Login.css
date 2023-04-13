@@ -1,0 +1,61 @@
+/* .login-page-container {
+  background-color: #2FC18C;
+  background-image: url('../images/foto\ fundo.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  max-height: 100%;
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-card {
+  background-color: antiquewhite;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 356px;
+  width: 525px;
+}
+
+.inputs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 65%;
+}
+
+.inputs-container input {
+  background-color: transparent;
+  border: unset;
+  border: solid 1.5px #003BE5;
+  border-radius: 3px;
+  width: 95.1%;
+  height: 35px;
+}
+
+.inputs-container input::placeholder {
+  color: #003BE5;
+  padding: 10px;
+}
+
+.inputs-container button {
+  background-color: #003BE5;
+  border: unset;
+  border-radius: 3px;
+  width: 330px;
+  height: 40px;
+  color: antiquewhite;
+  font-weight: 700;
+}
+
+.form-card img {
+  margin-bottom: 50px;
+} */

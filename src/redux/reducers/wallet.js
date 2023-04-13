@@ -1,7 +1,7 @@
 import {
   ACTIVATE_EDIT_MODE,
   DELETE_EXPENSE,
-  REQUEST_FAILED,
+  /* REQUEST_FAILED, */
   REQUEST_STARTED,
   REQUEST_SUCCESSFUL,
   SAVE_EDIT,
@@ -25,34 +25,35 @@ const wallet = (state = INITIAL_STATE, action) => {
       isFetching: true,
       errorMessage: '',
       currencies: [] };
+
   case REQUEST_SUCCESSFUL:
     return { ...state,
       isFetching: false,
       currencies: data,
       errorMessage: '' };
-  case REQUEST_FAILED:
+
+    /* case REQUEST_FAILED:
     return { ...state,
       isFetching: false,
       errorMessage: data,
-      currencies: [] };
+      currencies: [] }; */
+
   case SAVE_EXPENSES:
     return { ...state,
       expenses: [...state.expenses, {
         id: state.expenses.length,
         ...data[0],
-        exchangeRates: data[1],
-      }] };
+        exchangeRates: data[1] }] };
+
   case DELETE_EXPENSE:
-    return {
-      ...state,
-      expenses: [...state.expenses.filter((expense) => expense.id !== data)],
-    };
+    return { ...state,
+      expenses: [...state.expenses.filter((expense) => expense.id !== data)] };
+
   case ACTIVATE_EDIT_MODE:
-    return {
-      ...state,
+    return { ...state,
       editor: true,
-      idToEdit: data,
-    };
+      idToEdit: data };
+
   case SAVE_EDIT: {
     return {
       ...state,

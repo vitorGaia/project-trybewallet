@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { userLogin } from '../redux/actions';
+import './Login.css';
+import logo from '../images/logo Trybe Wallet.svg';
 
 class Login extends React.Component {
   state = {
@@ -37,36 +39,40 @@ class Login extends React.Component {
   render() {
     const { email, password, disableBtn } = this.state;
     return (
-      <div>
-        <form>
-          <input
-            type="email"
-            data-testid="email-input"
-            onChange={ this.handleChange }
-            name="email"
-            value={ email }
-            placeholder="Email"
-          />
+      <main className="login-page-container">
+        <form className="form-card">
+          <img alt="logo-tybewallet" src={ logo } />
 
-          <input
-            type="password"
-            data-testid="password-input"
-            min="5"
-            onChange={ this.handleChange }
-            name="password"
-            value={ password }
-            placeholder="Senha"
-          />
+          <div className="inputs-container">
+            <input
+              type="email"
+              data-testid="email-input"
+              onChange={ this.handleChange }
+              name="email"
+              value={ email }
+              placeholder="E-mail"
+            />
 
-          <button
-            disabled={ disableBtn }
-            onClick={ this.handleClick }
-            type="button"
-          >
-            Entrar
-          </button>
+            <input
+              type="password"
+              data-testid="password-input"
+              min="5"
+              onChange={ this.handleChange }
+              name="password"
+              value={ password }
+              placeholder="Senha"
+            />
+
+            <button
+              disabled={ disableBtn }
+              onClick={ this.handleClick }
+              type="button"
+            >
+              Entrar
+            </button>
+          </div>
         </form>
-      </div>
+      </main>
     );
   }
 }
