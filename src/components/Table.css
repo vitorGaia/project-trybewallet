@@ -1,0 +1,43 @@
+.table-body {
+  height: 58%;
+  border-radius: 10px;
+  width: 90%;
+}
+
+.table-body thead tr {
+  border-bottom: solid 2px antiquewhite;
+}
+
+.table-body thead tr th {
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+  width: 11.11%;
+  font-weight: 600;
+  position: relative;
+}
+
+.table-body thead tr th:not(:last-child)::before {
+  background-color: antiquewhite;
+  position: absolute;
+  content: '';
+  right: 0;
+  top:25%;
+  width: 1.5px;
+  height: 60%;
+}
+
+.table-body tbody tr {
+  border-bottom: 1.5px solid #2FC18C;
+  height: 40px;
+}
+
+.table-body tbody tr td {
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+  color: #2FC18C;
+  width: 11.11%;
+  height: 40px;
+}

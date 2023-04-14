@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { activateEditMode, deleteExpense } from '../redux/actions';
+import './Table.css';
 
 class Table extends Component {
   render() {
@@ -45,13 +46,8 @@ class Table extends Component {
       );
     });
 
-    const estilo = {
-      backgroundColor: '#DDFFBB',
-      color: 'black',
-    };
-
     return (
-      <table style={ estilo }>
+      <table className="table-body">
         <thead>
           <tr>
             <th>Descrição</th>

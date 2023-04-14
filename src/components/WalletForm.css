@@ -1,0 +1,72 @@
+.form-header-container {
+  background-color: antiquewhite;
+  color: #003BE5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 60%;
+  width: 100%;
+  border-radius:10px
+}
+
+.form-wallet-container {
+  background-color: #E1E5EB;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-wallet-container div {
+  width: 80%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-wallet-container div label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.form-wallet-container div label input {
+  border: #003BE5 solid 1.5px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.form-wallet-container div label select {
+  border: #003BE5 solid 1.5px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.button-container {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container button {
+  background-color: #2FC18C;
+  border: unset;
+  color: antiquewhite;
+  border-radius: 5px;
+  width: 330px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 600;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchCotations, fetchCurrencies, saveEdit } from '../redux/actions';
+import './WalletForm.css';
 
 class WalletForm extends Component {
   state = {
@@ -51,72 +52,80 @@ class WalletForm extends Component {
     ));
 
     return (
-      <form>
+      <form className="form-header-container">
 
-        <label>
-          Valor
-          <input
-            type="number"
-            data-testid="value-input"
-            name="value"
-            value={ value }
-            onChange={ this.handleChange }
-          />
-        </label>
+        <div className="form-wallet-container">
+          <div>
+            <label>
+              Descrição da despesa
+              <input
+                type="text"
+                data-testid="description-input"
+                name="description"
+                value={ description }
+                onChange={ this.handleChange }
+              />
+            </label>
 
-        <label>
-          Descrição
-          <input
-            type="text"
-            data-testid="description-input"
-            name="description"
-            value={ description }
-            onChange={ this.handleChange }
-          />
-        </label>
+            <label>
+              Categoria da despesa
+              <select
+                data-testid="tag-input"
+                onChange={ this.handleChange }
+                name="tag"
+                value={ tag }
+              >
+                {mapCategories}
+              </select>
+            </label>
+          </div>
 
-        <label>
-          Moeda
-          <select
-            data-testid="currency-input"
-            onChange={ this.handleChange }
-            name="currency"
-            value={ currency }
+          <div>
+            <label>
+              Valor
+              <input
+                type="number"
+                data-testid="value-input"
+                name="value"
+                value={ value }
+                onChange={ this.handleChange }
+              />
+            </label>
+
+            <label>
+              Métodos de pagamento
+              <select
+                data-testid="method-input"
+                onChange={ this.handleChange }
+                name="method"
+                value={ method }
+              >
+                {mapMethods}
+              </select>
+            </label>
+
+            <label>
+              Moeda
+              <select
+                data-testid="currency-input"
+                onChange={ this.handleChange }
+                name="currency"
+                value={ currency }
+              >
+                {mapCurrencies}
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div className="button-container">
+          <button
+            type="button"
+            onClick={ this.handleClick }
           >
-            {mapCurrencies}
-          </select>
-        </label>
-
-        <label>
-          Métodos de pagamento
-          <select
-            data-testid="method-input"
-            onChange={ this.handleChange }
-            name="method"
-            value={ method }
-          >
-            {mapMethods}
-          </select>
-        </label>
-
-        <label>
-          Categoria
-          <select
-            data-testid="tag-input"
-            onChange={ this.handleChange }
-            name="tag"
-            value={ tag }
-          >
-            {mapCategories}
-          </select>
-        </label>
-
-        <button
-          type="button"
-          onClick={ this.handleClick }
-        >
-          {editor ? 'Editar despesa' : 'Adicionar despesa'}
-        </button>
+            {editor ? 'Editar despesa' : 'Adicionar despesa'}
+          </button>
+        </div>
 
       </form>
     );

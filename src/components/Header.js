@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import './Header.css';
+import logo from '../images/logo Trybe Wallet.svg';
 
 class Header extends Component {
   sumExpenses = () => {
@@ -24,10 +26,13 @@ class Header extends Component {
     const { userEmail } = this.props;
 
     return (
-      <header>
+      <header className="header-container">
+        <img alt="logo" src={ logo } />
+        <span>
+          <spam className="font-format">Total de despesas:</spam>
+          {` ${this.sumExpenses().toFixed(2)} BRL`}
+        </span>
         <span data-testid="email-field">{ userEmail }</span>
-        <span data-testid="total-field">{ this.sumExpenses().toFixed(2) }</span>
-        <span data-testid="header-currency-field">BRL</span>
       </header>
     );
   }
