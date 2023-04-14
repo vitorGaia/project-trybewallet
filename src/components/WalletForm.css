@@ -45,11 +45,43 @@
   background-color: transparent;
 }
 
+#input-value {
+  width: 190px;
+}
+
+#input-description {
+  width: 310px;
+}
+
+.form-wallet-container div label input:hover {
+  border: solid 2px blue;
+  transition: 0.1.5s;
+  transform: scale(1.01);
+}
+
 .form-wallet-container div label select {
   border: #003BE5 solid 1.5px;
   height: 30px;
   border-radius: 5px;
   background-color: transparent;
+}
+
+#input-category {
+  width: 190px;
+}
+
+#input-method {
+  width: 250px;
+}
+
+#input-currency {
+  width: 100px;
+}
+
+.form-wallet-container div label select:hover {
+  border: solid 2px blue;
+  transition: 0.1.5s;
+  transform: scale(1.01);
 }
 
 .button-container {
@@ -69,4 +101,14 @@
   height: 40px;
   font-size: 18px;
   font-weight: 600;
+}
+
+.button-container button:hover {
+  background-color: #38af83;
+  transition: 0.3s;
+  transform: scale(1.02);
+}
+
+.blue {
+  color: #003BE5;
 }

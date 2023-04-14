@@ -31,7 +31,13 @@ export const fetchCurrencies = () => async (dispatch) => {
     dispatch(requestStarted());
     const data = await (await fetch('https://economia.awesomeapi.com.br/json/all')).json();
     delete data.USDT;
-    dispatch(requestSuccessful(data));
+    const brlData = { BRL: {
+      ask: '1',
+      code: 'BRL',
+      name: 'Real Oficial',
+    },
+    ...data };
+    dispatch(requestSuccessful(brlData));
   } catch (error) {
     dispatch(requestFailed(error));
   }
@@ -46,7 +52,13 @@ export const fetchCotations = (expense) => async (dispatch) => {
   try {
     const data = await (await fetch('https://economia.awesomeapi.com.br/json/all')).json();
     delete data.USDT;
-    dispatch(saveExpenses(expense, data));
+    const brlData = { BRL: {
+      ask: '1',
+      code: 'BRL',
+      name: 'Real Oficial',
+    },
+    ...data };
+    dispatch(saveExpenses(expense, brlData));
   } catch (error) {
     dispatch(requestFailed(error));
   }

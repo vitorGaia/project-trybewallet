@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { BsPencilSquare, BsTrash } from 'react-icons/bs';
 import { activateEditMode, deleteExpense } from '../redux/actions';
 import './Table.css';
 
@@ -26,19 +27,18 @@ class Table extends Component {
           <td>{(+ask).toFixed(2)}</td>
           <td>{convertedValue}</td>
           <td>Real</td>
-          <td>
+          <td className="buttons-cell">
             <button
               data-testid="edit-btn"
               onClick={ () => dispatch(activateEditMode(expense.id)) }
             >
-              Editar
-
+              <BsPencilSquare className="green" />
             </button>
             <button
               data-testid="delete-btn"
               onClick={ () => dispatch(deleteExpense(expense.id)) }
             >
-              Deletar
+              <BsTrash className="red" />
 
             </button>
           </td>
@@ -47,24 +47,26 @@ class Table extends Component {
     });
 
     return (
-      <table className="table-body">
-        <thead>
-          <tr>
-            <th>Descrição</th>
-            <th>Tag</th>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Moeda</th>
-            <th>Câmbio utilizado</th>
-            <th>Valor convertido</th>
-            <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
-          </tr>
-        </thead>
-        <tbody>
-          {mapExpensesTable}
-        </tbody>
-      </table>
+      <div className="table-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Tag</th>
+              <th>Método de pagamento</th>
+              <th>Valor</th>
+              <th>Moeda</th>
+              <th>Câmbio utilizado</th>
+              <th>Valor convertido</th>
+              <th>Moeda de conversão</th>
+              <th>Editar/Excluir</th>
+            </tr>
+          </thead>
+          <tbody>
+            {mapExpensesTable}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }

@@ -14,7 +14,7 @@
 
 .form-card {
   background-color: antiquewhite;
-  border-radius: 15px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,6 +41,12 @@
   height: 35px;
 }
 
+.inputs-container input:hover {
+  border: solid 2px blue;
+  transition: 0.1.5s;
+  transform: scale(1.01);
+}
+
 .inputs-container input::placeholder {
   color: #003BE5;
   padding: 10px;
@@ -54,6 +60,12 @@
   height: 40px;
   color: antiquewhite;
   font-weight: 700;
+}
+
+.inputs-container button:hover {
+  border: solid 2px blue;
+  transition: 0.1.5s;
+  transform: scale(1.02);
 }
 
 .form-card img {

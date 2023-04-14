@@ -2,6 +2,11 @@
   height: 58%;
   border-radius: 10px;
   width: 90%;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 .table-body thead tr {
@@ -24,8 +29,12 @@
   content: '';
   right: 0;
   top:25%;
-  width: 1.5px;
+  border-left: 2px solid transparent;
   height: 60%;
+}
+
+.table-body tbody {
+  overflow: hidden;
 }
 
 .table-body tbody tr {
@@ -34,10 +43,34 @@
 }
 
 .table-body tbody tr td {
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 500;
   text-align: center;
   vertical-align: middle;
   color: #2FC18C;
   width: 11.11%;
-  height: 40px;
+  height: 55px;
+  padding: 5px;
+}
+
+.buttons-cell {
+  height: 100%;
+  width: 100%;
+}
+
+.buttons-cell button {
+  border: unset;
+  background-color: transparent;
+}
+
+.red {
+  color: #DF3C6D;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.green {
+  color: #2FC18C;
+  font-size: 22px;
+  font-weight: 700;
 }

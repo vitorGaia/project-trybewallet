@@ -20,6 +20,14 @@
   height: 50%;
   border-radius: 10px;
   position: fixed;
+  background-color: darkred;
+  background: #FFFFFF;
+  box-shadow: -4px 9px 13px rgba(40, 52, 87, 0.4);
+}
+
+.header-form-container:hover {
+  transition: 0.3s;
+  transform: scale(1.005);
 }
 
 .table-container {
@@ -28,7 +36,8 @@
   height: 75%;
   width: 90%;
   display: flex;
-  margin-top: 11.1%;
+  margin-top: 9.9%;
   align-items: center;
   flex-direction: column-reverse;
+  box-shadow: -4px 9px 13px rgba(0, 0, 0, 0.3);
 }
